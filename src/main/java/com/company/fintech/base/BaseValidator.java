@@ -12,12 +12,12 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 @Component
 public class BaseValidator {
     public ErrorDetails buildValidationErrorDetails() {
-        return new ErrorDetails(BAD_REQUEST.value(),"validation Error . Check error field for details");
+        return new ErrorDetails(BAD_REQUEST.value(), "validation Error . Check error field for details");
     }
 
     public ResponseEntity<WebResponse> buildErrorResponseEntity(ErrorDetails errorDetails) {
         ResponseEntity<WebResponse> responseEntity = null;
-        if(CollectionUtils.isNotEmpty(errorDetails.getErrors())){
+        if (CollectionUtils.isNotEmpty(errorDetails.getErrors())) {
             WebResponse responseVal = WebResponse.builder().responseStatusCode(1001).errorDetails(errorDetails).build();
             responseEntity = ResponseEntity.badRequest().body(responseVal);
         }
@@ -27,7 +27,7 @@ public class BaseValidator {
 
     public void mandatoryFieldValidation(ErrorDetails errorDetails, String fieldName, String fieldValue) {
 
-        if(StringUtils.isBlank(fieldValue)){
+        if (StringUtils.isBlank(fieldValue)) {
             errorDetails.addMandatoryValidationError(fieldName);
         }
     }

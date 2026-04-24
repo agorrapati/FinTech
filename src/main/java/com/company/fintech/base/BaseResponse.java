@@ -15,6 +15,7 @@ public class BaseResponse {
     public ErrorDetails getErrorDetails() {
         return errorDetails;
     }
+
     @Generated
     public void setErrorDetails(ErrorDetails errorDetails) {
         this.errorDetails = errorDetails;

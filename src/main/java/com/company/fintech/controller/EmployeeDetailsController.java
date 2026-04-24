@@ -27,10 +27,10 @@ public class EmployeeDetailsController extends BaseController {
     private EmployeeDetailsService employeeDetailsService;
 
     @PostMapping(APIConstant.API_RETRIEVE_EMPLOYEE_DETAILS)
-    public ResponseEntity<WebResponse> getEmployeeDetails(@RequestBody RetrieveEmployeeDetailsReq retrieveEmployeeDetailsReqObj) throws Exception{
+    public ResponseEntity<WebResponse> getEmployeeDetails(@RequestBody RetrieveEmployeeDetailsReq retrieveEmployeeDetailsReqObj) throws Exception {
         ResponseEntity<WebResponse> responseEntity = employeeDetailsValidator.validatorEmployeeDetails(retrieveEmployeeDetailsReqObj);
 
-        if(Objects.isNull(responseEntity)){
+        if (Objects.isNull(responseEntity)) {
             RetrieveEmployeeDetailsResponse retrieveEmployeeDetails = employeeDetailsService.retrieveEmployeeDetails(retrieveEmployeeDetailsReqObj);
             responseEntity = createSyncResponse(retrieveEmployeeDetails);
         }

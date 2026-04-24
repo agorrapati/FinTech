@@ -14,14 +14,17 @@ public class SOAPBaseRequest {
     public String getInitiatorId() {
         return initiatorId;
     }
+
     @Generated
     public void setInitiatorId(String initiatorId) {
         this.initiatorId = initiatorId;
     }
+
     @Generated
     public String getOriginatorId() {
         return originatorId;
     }
+
     @Generated
     public void setOriginatorId(String originatorId) {
         this.originatorId = originatorId;

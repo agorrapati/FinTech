@@ -8,15 +8,15 @@ import java.util.Objects;
 
 @Component
 public class BaseController {
-    public ResponseEntity<WebResponse> createSyncResponse(BaseResponse baseResponse){
+    public ResponseEntity<WebResponse> createSyncResponse(BaseResponse baseResponse) {
         ResponseEntity<WebResponse> responseEntity;
-        if(Objects.nonNull(baseResponse)){
-            if(Objects.isNull(baseResponse.getErrorDetails())){
+        if (Objects.nonNull(baseResponse)) {
+            if (Objects.isNull(baseResponse.getErrorDetails())) {
                 responseEntity = this.createSyncSuccessResponse(baseResponse);
-            }else{
+            } else {
                 responseEntity = this.createSyncErrorResponse(baseResponse);
             }
-        }else{
+        } else {
             responseEntity = this.createSyncFailedResponse();
         }
         return responseEntity;

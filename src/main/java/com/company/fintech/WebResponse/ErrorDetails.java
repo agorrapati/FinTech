@@ -3,7 +3,6 @@ package com.company.fintech.WebResponse;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Generated;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,40 +19,46 @@ public class ErrorDetails {
     public Integer getCode() {
         return code;
     }
+
     @Generated
     public void setCode(Integer code) {
         this.code = code;
     }
+
     @Generated
     public String getMessage() {
         return message;
     }
+
     @Generated
     public void setMessage(String message) {
         this.message = message;
     }
+
     @Generated
     public List<ValidationError> getErrors() {
         return errors;
     }
+
     @Generated
     public void setErrors(List<ValidationError> errors) {
         this.errors = errors;
     }
 
-    ErrorDetails(){
+    ErrorDetails() {
 
     }
-    public ErrorDetails(int code,String message){
-        this.code=code;
-        this.message=message;
+
+    public ErrorDetails(int code, String message) {
+        this.code = code;
+        this.message = message;
     }
 
     public void addMandatoryValidationError(String fieldName) {
-        if(Objects.isNull(this.errors)){
-            this.errors=new ArrayList<>();
+        if (Objects.isNull(this.errors)) {
+            this.errors = new ArrayList<>();
         }
-        this.errors.add(new ValidationError(fieldName,"Missing Mandatory parameter"));
+        this.errors.add(new ValidationError(fieldName, "Missing Mandatory parameter"));
     }
 
 
@@ -65,6 +70,7 @@ public class ErrorDetails {
         public String getField() {
             return field;
         }
+
         @Generated
         public String getMessage() {
             return message;
