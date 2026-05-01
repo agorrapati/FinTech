@@ -2,51 +2,30 @@ package com.company.fintech.domain.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EmployeeDetails {
+    @JsonProperty("employeeName")
     private String employeeName;
-    private String employeeId;
+    @JsonProperty("employeeId")
+    private int employeeId;
+    @JsonProperty("employeeDesignation")
     private String employeeDesignation;
 
-    EmployeeDetails(String employeeName, String employeeId, String employeeDesignation) {
-        this.employeeName = employeeName;
-        this.employeeId = employeeId;
-        this.employeeDesignation = employeeDesignation;
-    }
-
-    public static EmployeeDetailsBuilder builder() {
-        return new EmployeeDetailsBuilder();
-    }
-
-    public String getEmployeeName() {
-        return this.employeeName;
-    }
-
-    public String getEmployeeId() {
-        return this.employeeId;
-    }
-
-    public String getEmployeeDesignation() {
-        return this.employeeDesignation;
-    }
-
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
-    }
-
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public void setEmployeeDesignation(String employeeDesignation) {
-        this.employeeDesignation = employeeDesignation;
-    }
 
     public static class EmployeeDetailsBuilder {
         private String employeeName;
-        private String employeeId;
+        private int employeeId;
         private String employeeDesignation;
 
         EmployeeDetailsBuilder() {
@@ -57,7 +36,7 @@ public class EmployeeDetails {
             return this;
         }
 
-        public EmployeeDetailsBuilder employeeId(String employeeId) {
+        public EmployeeDetailsBuilder employeeId(int employeeId) {
             this.employeeId = employeeId;
             return this;
         }
@@ -67,9 +46,7 @@ public class EmployeeDetails {
             return this;
         }
 
-        public EmployeeDetails build() {
-            return new EmployeeDetails(this.employeeName, this.employeeId, this.employeeDesignation);
-        }
+
 
         public String toString() {
             return "EmployeeDetails.EmployeeDetailsBuilder(employeeName=" + this.employeeName + ", employeeId=" + this.employeeId + ", employeeDesignation=" + this.employeeDesignation + ")";

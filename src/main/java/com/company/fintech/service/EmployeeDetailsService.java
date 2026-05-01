@@ -1,6 +1,7 @@
 package com.company.fintech.service;
 
 import com.company.fintech.domain.request.RetrieveEmployeeDetailsReq;
+import com.company.fintech.domain.response.EmployeeDetails;
 import com.company.fintech.domain.response.RetrieveEmployeeDetailsResponse;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 
 @Service
@@ -35,9 +37,9 @@ public class EmployeeDetailsService {
 */
 
         InputStream inputStream = new ClassPathResource("employeeDetails.json").getInputStream();
-        retrieveEmployeeDetailsResponse = objectMapper.readValue(inputStream, new TypeReference<>() {
+        List<EmployeeDetails> responseList  = objectMapper.readValue(inputStream, new TypeReference<List<EmployeeDetails>>() {
         });
-
+        retrieveEmployeeDetailsResponse.setEmployeeDetailsList(responseList);
         return retrieveEmployeeDetailsResponse;
     }
 }

@@ -39,7 +39,7 @@ public class BaseController {
     }
 
     private ResponseEntity<WebResponse> createSyncSuccessResponse(BaseResponse baseResponse) {
-        return this.createSyncSuccessResponse((Object) null);
+        return this.createSyncSuccessResponse((Object) baseResponse);
     }
 
     private ResponseEntity<WebResponse> createSyncSuccessResponse(Object responseValue) {

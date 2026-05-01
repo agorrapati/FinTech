@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class EmployeeDetailsValidator extends BaseValidator {
     public ResponseEntity<WebResponse> validatorEmployeeDetails(RetrieveEmployeeDetailsReq retrieveEmployeeDetailsReqObj) {
         ErrorDetails errorDetails = buildValidationErrorDetails();
-        mandatoryFieldValidation(errorDetails, Constant.INITIATOR_ID, retrieveEmployeeDetailsReqObj.getInitiatorId());
+        //mandatoryFieldValidation(errorDetails, Constant.INITIATOR_ID, retrieveEmployeeDetailsReqObj.getInitiatorId());
         mandatoryFieldValidation(errorDetails, Constant.USER_ID, retrieveEmployeeDetailsReqObj.getUserId());
 
         return buildErrorResponseEntity(errorDetails);
