@@ -22,34 +22,13 @@ public class EmployeeDetails {
     @JsonProperty("employeeDesignation")
     private String employeeDesignation;
 
+    @JsonProperty("contactNumber")
+    private String contactNumber;
+    @JsonProperty("officialEmail")
+    private String officialEmail;
+    @JsonProperty("personalEmail")
+    private String personalEmail;
+    @JsonProperty("courses")
+    private Courses courses;
 
-    public static class EmployeeDetailsBuilder {
-        private String employeeName;
-        private int employeeId;
-        private String employeeDesignation;
-
-        EmployeeDetailsBuilder() {
-        }
-
-        public EmployeeDetailsBuilder employeeName(String employeeName) {
-            this.employeeName = employeeName;
-            return this;
-        }
-
-        public EmployeeDetailsBuilder employeeId(int employeeId) {
-            this.employeeId = employeeId;
-            return this;
-        }
-
-        public EmployeeDetailsBuilder employeeDesignation(String employeeDesignation) {
-            this.employeeDesignation = employeeDesignation;
-            return this;
-        }
-
-
-
-        public String toString() {
-            return "EmployeeDetails.EmployeeDetailsBuilder(employeeName=" + this.employeeName + ", employeeId=" + this.employeeId + ", employeeDesignation=" + this.employeeDesignation + ")";
-        }
-    }
 }

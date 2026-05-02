@@ -5,6 +5,7 @@ import com.company.fintech.base.BaseController;
 import com.company.fintech.constants.APIConstant;
 import com.company.fintech.domain.request.RetrieveEmployeeDetailsReq;
 import com.company.fintech.domain.response.RetrieveEmployeeDetailsResponse;
+import com.company.fintech.domain.response.RetrieveEmployeeDetailsResponseById;
 import com.company.fintech.service.EmployeeDetailsService;
 import com.company.fintech.validator.EmployeeDetailsValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,18 @@ public class EmployeeDetailsController extends BaseController {
 
         if (Objects.isNull(responseEntity)) {
             RetrieveEmployeeDetailsResponse retrieveEmployeeDetails = employeeDetailsService.retrieveEmployeeDetails(retrieveEmployeeDetailsReqObj);
+            responseEntity = createSyncResponse(retrieveEmployeeDetails);
+        }
+        return responseEntity;
+    }
+
+
+    @PostMapping(APIConstant.API_RETRIEVE_EMPLOYEE_DETAILS_BY_ID)
+    public ResponseEntity<WebResponse> getEmployeeDetailsById(@RequestBody RetrieveEmployeeDetailsReq retrieveEmployeeDetailsReqObj) throws Exception {
+        ResponseEntity<WebResponse> responseEntity = employeeDetailsValidator.validatorEmployeeDetails(retrieveEmployeeDetailsReqObj);
+
+        if (Objects.isNull(responseEntity)) {
+            RetrieveEmployeeDetailsResponseById retrieveEmployeeDetails = employeeDetailsService.retrieveEmployeeDetailsById(retrieveEmployeeDetailsReqObj);
             responseEntity = createSyncResponse(retrieveEmployeeDetails);
         }
         return responseEntity;

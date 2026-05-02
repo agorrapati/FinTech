@@ -11,9 +11,10 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LoginUserDetailsResponse extends BaseResponse {
-    public String employeeName;
-    public String employeeDesignation;
+    private EmployeeDetails employeeDetails;
+//    public String employeeName;
+//    public String employeeDesignation;
     public boolean validUser;
-    public int employeeId;
+//    public int employeeId;
 
 }

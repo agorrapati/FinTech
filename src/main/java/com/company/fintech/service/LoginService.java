@@ -23,15 +23,21 @@ public class LoginService {
     public LoginUserDetailsResponse loginUserDetails(LoginUserDetailsReq loginUserDetailsReq) throws IOException {
 
         LoginUserDetailsResponse loginUserDetailsResponse = new LoginUserDetailsResponse();
+        EmployeeDetails employeeDetails = new EmployeeDetails();
         InputStream inputStream = new ClassPathResource("employeeDetails.json").getInputStream();
         JsonNode root = objectMapper.readTree(inputStream);
 
         if(root.isArray()){
             for (JsonNode node: root){
                 if(node.get("employeeName").asText().equals(loginUserDetailsReq.username)){
-                    loginUserDetailsResponse.setEmployeeId(node.get("employeeId").asInt());
-                    loginUserDetailsResponse.setEmployeeName(node.get("employeeName").asText());
-                    loginUserDetailsResponse.setEmployeeDesignation(node.get("employeeDesignation").asText());
+                    employeeDetails.setEmployeeId(node.get("employeeId").asInt());
+                    employeeDetails.setEmployeeName(node.get("employeeName").asText());
+                    employeeDetails.setEmployeeDesignation(node.get("employeeDesignation").asText());
+                    employeeDetails.setContactNumber(node.get("contactNumber").asText());
+                    employeeDetails.setOfficialEmail(node.get("officialEmail").asText());
+                    employeeDetails.setPersonalEmail(node.get("personalEmail").asText());
+                    loginUserDetailsResponse.setEmployeeDetails(employeeDetails);
+                    //employeeDetails.getCourses().getCompletedList().
                     loginUserDetailsResponse.setValidUser(true);
                     return loginUserDetailsResponse;
                 }else{

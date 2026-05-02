@@ -1,21 +1,119 @@
 [{
   "employeeId" : 12345,
   "employeeName" : "John Doe",
-  "employeeDesignation" : "Consultant"
+  "employeeDesignation" : "Consultant",
+  "courses" : {
+    "completed": [
+      {
+        "courseName": "Java Beginners Course"
+      },{
+        "courseName": "Python Beginners Course"
+      },{
+        "courseName": "React JS"
+      },{
+        "courseName": "Node JS"
+      }
+    ],
+    "continue" : [
+      {
+        "courseName": "Angular JS"
+      },
+      {
+        "courseName": "Gen AI"
+      }
+    ]
+  },
+  "contactNumber" : "1234567890",
+  "officialEmail" : "john@company.com",
+  "personalEmail" : "john@example.com"
 },{
   "employeeId" : 12346,
   "employeeName" : "John Smith",
-  "employeeDesignation" : "Consultant"
+  "employeeDesignation" : "Consultant",
+  "courses" : {
+    "completed": [
+      {
+        "courseName": "React JS"
+      },{
+        "courseName": "Node JS"
+      }
+    ],
+    "continue" : [
+
+      {
+        "courseName": "Gen AI"
+      }
+    ]
+  },
+  "contactNumber" : "1234567890",
+  "officialEmail" : "john@company.com",
+  "personalEmail" : "john@example.com"
 },{
   "employeeId" : 12347,
   "employeeName" : "Steve Smith",
-  "employeeDesignation" : "Senior Consultant"
+  "employeeDesignation" : "Senior Consultant",
+  "courses" : {
+    "completed": [
+      {
+        "courseName": "Java Beginners Course"
+      }
+    ],
+    "continue" : [
+
+      {
+        "courseName": "Gen AI"
+      }
+    ]
+  },
+  "contactNumber" : "1234567890",
+  "officialEmail" : "john@company.com",
+  "personalEmail" : "john@example.com"
 },{
   "employeeId" : 12348,
   "employeeName" : "Rob Steve",
-  "employeeDesignation" : "Senior Consultant"
+  "employeeDesignation" : "Senior Consultant",
+  "courses" : {
+    "completed": [
+     {
+        "courseName": "Node JS"
+      }
+    ]
+  },
+  "contactNumber" : "1234567890",
+  "officialEmail" : "john@company.com",
+  "personalEmail" : "john@example.com",
+  "courses" : {
+    "completed": [
+      {
+        "courseName": "React JS"
+      }
+    ],
+    "continue" : [
+      {
+        "courseName": "Gen AI"
+      }
+    ]
+  },
+  "contactNumber" : "1234567890",
+  "officialEmail" : "john@company.com",
+  "personalEmail" : "john@example.com"
 },{
   "employeeId" : 12349,
   "employeeName" : "Kane Will",
-  "employeeDesignation" : "Manager"
+  "employeeDesignation" : "Manager",
+  "courses" : {
+    "completed": [
+      {
+        "courseName": "Scrum AI"
+      }
+    ],
+    "continue" : [
+      {
+        "courseName": "Gen AI"
+      }
+    ]
+  },
+  "contactNumber" : "1234567890",
+  "officialEmail" : "john@company.com",
+  "personalEmail" : "john@example.com"
 }]
