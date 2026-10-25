@@ -23,21 +23,6 @@ public class EmployeeDetailsService {
     public RetrieveEmployeeDetailsResponse retrieveEmployeeDetails(RetrieveEmployeeDetailsReq retrieveEmployeeDetailsReqObj) throws IOException {
         RetrieveEmployeeDetailsResponse retrieveEmployeeDetailsResponse = RetrieveEmployeeDetailsResponse.builder().build();
 
-        /*
-        String url = "jdbc:oracle:thin:@localhost:1521:xe";
-        String username = "your_username";
-        String password = "your_password";
-
-        try (Connection conn = DriverManager.getConnection(url, username, password)) {
-            if (conn != null) {
-                System.out.println("Connected to the Oracle database!");
-            }
-        } catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-*/
-
         InputStream inputStream = new ClassPathResource("employeeDetails.json").getInputStream();
         List<EmployeeDetails> responseList  = objectMapper.readValue(inputStream, new TypeReference<List<EmployeeDetails>>() {
         });
@@ -49,18 +34,19 @@ public class EmployeeDetailsService {
     public RetrieveEmployeeDetailsResponseById retrieveEmployeeDetailsById(RetrieveEmployeeDetailsReq retrieveEmployeeDetailsReqObj) throws IOException {
         RetrieveEmployeeDetailsResponseById retrieveEmployeeDetailsResponse = RetrieveEmployeeDetailsResponseById.builder().build();
 
+        try (InputStream inputStream = new ClassPathResource("employeeDetails.json").getInputStream()) {
+            JsonNode root = objectMapper.readTree(inputStream);
 
-        InputStream inputStream = new ClassPathResource("employeeDetails.json").getInputStream();
-        JsonNode root = objectMapper.readTree(inputStream);
-
-        if(root.isArray()) {
-            for (JsonNode node : root) {
-                if (node.get("employeeName").asText().equals(retrieveEmployeeDetailsReqObj.getUserId())) {
-
+            if (root.isArray()) {
+                for (JsonNode node : root) {
+                    if (node.path("employeeId").asText().equals(retrieveEmployeeDetailsReqObj.getUserId())) {
+                        EmployeeDetails employeeDetails = objectMapper.treeToValue(node, EmployeeDetails.class);
+                        retrieveEmployeeDetailsResponse.setEmployeeDetails(employeeDetails);
+                        break; // found the employee, stop searching
+                    }
                 }
             }
         }
-        //retrieveEmployeeDetailsResponse.setEmployeeDetailsList(responseList);
         return retrieveEmployeeDetailsResponse;
     }
 }

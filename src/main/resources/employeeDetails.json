@@ -2,27 +2,16 @@
   "employeeId" : 12345,
   "employeeName" : "John Doe",
   "employeeDesignation" : "Consultant",
-  "courses" : {
-    "completed": [
-      {
-        "courseName": "Java Beginners Course"
-      },{
-        "courseName": "Python Beginners Course"
-      },{
-        "courseName": "React JS"
-      },{
-        "courseName": "Node JS"
-      }
-    ],
-    "continue" : [
-      {
-        "courseName": "Angular JS"
-      },
-      {
-        "courseName": "Gen AI"
-      }
-    ]
-  },
+  "courses" : [
+    {"id": "c1", "title": "Information Security Awareness", "category": "Compliance", "durationHours": 2,"status": "completed", "completedOn": "2026-09-12"},
+    {"id": "c2", "title": "Anti-Money Laundering Basics", "category": "Compliance", "durationHours": 3, "status": "completed", "completedOn": "2026-08-03"},
+    {"id": "c3", "title": "Workplace Code of Conduct", "category": "Policy", "durationHours": 1.5, "status": "completed", "completedOn": "2026-06-21"},
+    {"id": "c4", "title": "Expense Policy and Reimbursements", "category": "Finance", "durationHours": 1, "status": "completed", "completedOn": "2026-05-14"},
+    {"id": "c5", "title": "Data Privacy Essentials", "category": "Compliance", "durationHours": 2.5, "status": "in-progress", "progressPercent": 65, "lastOpened": "2026-10-22", "dueDate": "2026-11-15"},
+    {"id": "c6", "title": "Advanced Excel for Finance", "category": "Skills", "durationHours": 6, "status": "in-progress", "progressPercent": 30, "lastOpened": "2026-10-18", "dueDate": "2026-12-10"},
+    {"id": "c7", "title": "Prevention of Sexual Harassment at Work", "category": "Policy", "durationHours": 1.5, "status": "in-progress", "progressPercent": 10, "lastOpened": "2026-10-01", "dueDate": "2026-10-20"},
+    {"id": "c8", "title": "Gen AI", "category": "Skills", "durationHours": 3.5, "status": "in-progress", "progressPercent": 10, "lastOpened": "2026-10-01", "dueDate": "2026-10-20"}
+  ],
   "contactNumber" : "1234567890",
   "officialEmail" : "john@company.com",
   "personalEmail" : "john@example.com"
@@ -30,21 +19,15 @@
   "employeeId" : 12346,
   "employeeName" : "John Smith",
   "employeeDesignation" : "Consultant",
-  "courses" : {
-    "completed": [
-      {
-        "courseName": "React JS"
-      },{
-        "courseName": "Node JS"
-      }
-    ],
-    "continue" : [
-
-      {
-        "courseName": "Gen AI"
-      }
-    ]
-  },
+  "courses" : [
+    {"id": "c1", "title": "Information Security Awareness", "category": "Compliance", "durationHours": 2,"status": "completed", "completedOn": "2026-09-12"},
+    {"id": "c2", "title": "Anti-Money Laundering Basics", "category": "Compliance", "durationHours": 3, "status": "completed", "completedOn": "2026-08-03"},
+    {"id": "c3", "title": "Workplace Code of Conduct", "category": "Policy", "durationHours": 1.5, "status": "completed", "completedOn": "2026-06-21"},
+    {"id": "c4", "title": "Expense Policy and Reimbursements", "category": "Finance", "durationHours": 1, "status": "completed", "completedOn": "2026-05-14"},
+    {"id": "c5", "title": "Data Privacy Essentials", "category": "Compliance", "durationHours": 2.5, "status": "in-progress", "progressPercent": 65, "lastOpened": "2026-10-22", "dueDate": "2026-11-15"},
+    {"id": "c6", "title": "Advanced Excel for Finance", "category": "Skills", "durationHours": 6, "status": "in-progress", "progressPercent": 30, "lastOpened": "2026-10-18", "dueDate": "2026-12-10"},
+    {"id": "c7", "title": "Prevention of Sexual Harassment at Work", "category": "Policy", "durationHours": 1.5, "status": "in-progress", "progressPercent": 10, "lastOpened": "2026-10-01", "dueDate": "2026-10-20"}
+  ],
   "contactNumber" : "1234567890",
   "officialEmail" : "john@company.com",
   "personalEmail" : "john@example.com"
@@ -72,28 +55,15 @@
   "employeeId" : 12348,
   "employeeName" : "Rob Steve",
   "employeeDesignation" : "Senior Consultant",
-  "courses" : {
-    "completed": [
-     {
-        "courseName": "Node JS"
-      }
-    ]
-  },
-  "contactNumber" : "1234567890",
-  "officialEmail" : "john@company.com",
-  "personalEmail" : "john@example.com",
-  "courses" : {
-    "completed": [
-      {
-        "courseName": "React JS"
-      }
-    ],
-    "continue" : [
-      {
-        "courseName": "Gen AI"
-      }
-    ]
-  },
+  "courses" : [
+    {"id": "c1", "title": "Information Security Awareness", "category": "Compliance", "durationHours": 2,"status": "completed", "completedOn": "2026-09-12"},
+    {"id": "c2", "title": "Anti-Money Laundering Basics", "category": "Compliance", "durationHours": 3, "status": "completed", "completedOn": "2026-08-03"},
+    {"id": "c3", "title": "Workplace Code of Conduct", "category": "Policy", "durationHours": 1.5, "status": "completed", "completedOn": "2026-06-21"},
+    {"id": "c4", "title": "Expense Policy and Reimbursements", "category": "Finance", "durationHours": 1, "status": "completed", "completedOn": "2026-05-14"},
+    {"id": "c5", "title": "Data Privacy Essentials", "category": "Compliance", "durationHours": 2.5, "status": "in-progress", "progressPercent": 65, "lastOpened": "2026-10-22", "dueDate": "2026-11-15"},
+    {"id": "c6", "title": "Advanced Excel for Finance", "category": "Skills", "durationHours": 6, "status": "in-progress", "progressPercent": 30, "lastOpened": "2026-10-18", "dueDate": "2026-12-10"},
+    {"id": "c7", "title": "Prevention of Sexual Harassment at Work", "category": "Policy", "durationHours": 1.5, "status": "in-progress", "progressPercent": 10, "lastOpened": "2026-10-01", "dueDate": "2026-10-20"}
+  ],
   "contactNumber" : "1234567890",
   "officialEmail" : "john@company.com",
   "personalEmail" : "john@example.com"
@@ -101,18 +71,15 @@
   "employeeId" : 12349,
   "employeeName" : "Kane Will",
   "employeeDesignation" : "Manager",
-  "courses" : {
-    "completed": [
-      {
-        "courseName": "Scrum AI"
-      }
-    ],
-    "continue" : [
-      {
-        "courseName": "Gen AI"
-      }
-    ]
-  },
+  "courses" : [
+    {"id": "c1", "title": "Information Security Awareness", "category": "Compliance", "durationHours": 2,"status": "completed", "completedOn": "2026-09-12"},
+    {"id": "c2", "title": "Anti-Money Laundering Basics", "category": "Compliance", "durationHours": 3, "status": "completed", "completedOn": "2026-08-03"},
+    {"id": "c3", "title": "Workplace Code of Conduct", "category": "Policy", "durationHours": 1.5, "status": "completed", "completedOn": "2026-06-21"},
+    {"id": "c4", "title": "Expense Policy and Reimbursements", "category": "Finance", "durationHours": 1, "status": "completed", "completedOn": "2026-05-14"},
+    {"id": "c5", "title": "Data Privacy Essentials", "category": "Compliance", "durationHours": 2.5, "status": "in-progress", "progressPercent": 65, "lastOpened": "2026-10-22", "dueDate": "2026-11-15"},
+    {"id": "c6", "title": "Advanced Excel for Finance", "category": "Skills", "durationHours": 6, "status": "in-progress", "progressPercent": 30, "lastOpened": "2026-10-18", "dueDate": "2026-12-10"},
+    {"id": "c7", "title": "Prevention of Sexual Harassment at Work", "category": "Policy", "durationHours": 1.5, "status": "in-progress", "progressPercent": 10, "lastOpened": "2026-10-01", "dueDate": "2026-10-20"}
+  ],
   "contactNumber" : "1234567890",
   "officialEmail" : "john@company.com",
   "personalEmail" : "john@example.com"
